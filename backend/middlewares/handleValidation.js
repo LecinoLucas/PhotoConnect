@@ -1,3 +1,7 @@
+/*essa classe define um middleware de validação que é utilizado em rotas da sua aplicação Node.js.
+ Ele trabalha em conjunto com a biblioteca express-validator 
+ para verificar os dados enviados nas requisições. */
+
 const { validationResult } = require("express-validator");
 
 //essa classe são as midles de validação
