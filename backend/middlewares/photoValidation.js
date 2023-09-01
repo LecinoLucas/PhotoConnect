@@ -18,17 +18,9 @@ const photoInsertValidation = () => {
     }),
   ];
 };
-/*
+
 const photoUpdateValidation = () => {
   return [
-    body("image")
-      .optional()
-      .custom((value, { req }) => {
-        if (!req.file) {
-          throw new Error("A imagem é obrigatória");
-        }
-        return true;
-      }),
     body("title")
       .optional()
       .isString()
@@ -40,10 +32,10 @@ const photoUpdateValidation = () => {
 
 const commentValidation = () => {
   return [body("comment").isString().withMessage("O comentário é obrigatório")];
-};*/
+};
 
 module.exports = {
   photoInsertValidation,
-  //photoUpdateValidation,
- // commentValidation,
+  photoUpdateValidation,
+  commentValidation,
 };

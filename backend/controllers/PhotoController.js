@@ -111,11 +111,6 @@ const updatePhoto = async (req, res) => {
   const { id } = req.params;
   const { title } = req.body;
 
-  let image;
-
-  if (req.file) {
-    image = req.file.filename;
-  }
 
   const reqUser = req.user;
 
@@ -128,7 +123,7 @@ const updatePhoto = async (req, res) => {
   }
 
   // Check if photo belongs to user
-  if (!photo.userId.equals(reqUser._id)) {
+  if (!photo.userId.equals(reqUser._id)) { // se a foto nao for igual a o user id
     res
       .status(422)
       .json({ errors: ["Ocorreu um erro, tente novamente mais tarde"] });
@@ -139,14 +134,84 @@ const updatePhoto = async (req, res) => {
     photo.title = title;
   }
 
-  if (image) {
-    photo.image = image;
-  }
-
   await photo.save();
 
   res.status(200).json({ photo, message: "Foto atualizada com sucesso!" });
 };
+
+// Like functionality
+const likePhoto = async (req, res) => {
+  const { id } = req.params;
+
+  const reqUser = req.user;
+
+  const photo = await Photo.findById(id);
+
+  // Check if photo exists
+  if (!photo) {
+    res.status(404).json({ errors: ["Foto não encontrada!"] });
+    return; //404 e um erro 
+  }
+
+  // Check if user already liked the photo
+  if (photo.likes.includes(reqUser._id)) {
+    res.status(422).json({ errors: ["Você já curtiu esta foto."] });
+    return; //422 nao e um erro, e mais a requisição n pode ser processada
+  }
+
+  // Put user id in array of likes
+  photo.likes.push(reqUser._id);
+
+  await photo.save();
+
+  res
+    .status(200)
+    .json({ photoId: id, userId: reqUser._id, message: "A foto foi curtida!" });
+};
+// Comment functionality
+const commentPhoto = async (req, res) => {
+  const { id } = req.params;
+  const { comment } = req.body;
+
+  const reqUser = req.user;
+
+  const user = await User.findById(reqUser._id); // encontrar pelo mode
+
+  const photo = await Photo.findById(id); //encontarr pelo id
+
+  // Check if photo exists
+  if (!photo) {
+    res.status(404).json({ errors: ["Foto não encontrada!"] });
+    return;
+  }
+
+  // criando um comentario com todos os dados q preciso
+  const userComment = {  
+    comment,
+    userName: user.name,
+    userImage: user.profileImage,
+    userId: user._id,
+  };
+
+  photo.comments.push(userComment);
+
+  await photo.save();
+
+  res.status(200).json({
+    comment: userComment,
+    message: "Comentário adicionado com sucesso!",
+  });
+};
+
+// Search a photo by title
+const searchPhotos = async (req, res) => {
+  const { q } = req.query;
+
+  const photos = await Photo.find({ title: new RegExp(q, "i") }).exec();
+
+  res.status(200).json(photos);
+};
+
 
 module.exports = {
     insertPhoto,
@@ -155,4 +220,7 @@ module.exports = {
     getUserPhotos,
     getPhotoById,
     updatePhoto,
+    likePhoto,
+    commentPhoto,
+    searchPhotos,
 };
