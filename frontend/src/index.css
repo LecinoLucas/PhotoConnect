@@ -1,0 +1,162 @@
+/* Configurações globais para o elemento <body> */
+body {
+  /* Define a fonte padrão como "Roboto" e fontes genéricas do tipo sans-serif */
+  font-family: "Roboto", sans-serif;
+
+  /* Remove margens e preenchimento padrão do corpo da página */
+  margin: 0;
+  padding: 0;
+
+  /* Define o modelo de caixa como 'border-box' para facilitar o dimensionamento */
+  box-sizing: border-box;
+
+  /* Define a cor de fundo do corpo como preto (#121212) */
+  background-color: #121212;
+
+  /* Define a cor do texto como branco (#fafafa) */
+  color: #fafafa;
+}
+
+/* Estilização básica para hiperlinks <a> */
+a {
+  /* Define a cor do texto dos hiperlinks como branco (#fafafa) */
+  color: #fafafa;
+
+  /* Remove o sublinhado padrão dos hiperlinks */
+  text-decoration: none;
+}
+
+/* Estilo para elementos com a classe 'active' */
+.active {
+  /* Define a fonte em negrito para elementos com a classe 'active' */
+  font-weight: bold;
+}
+
+/* Remova a lista de estilo (pontos ou números) de <ul> */
+ul {
+  list-style: none;
+}
+
+/* Estilização para formulários <form> */
+form {
+  /* Configura o layout flexível com direção de coluna */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilização para rótulos <label> em formulários */
+label {
+  /* Configura o layout flexível com direção de coluna e alinhamento à esquerda */
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* Estilização para o texto dentro de rótulos <label> */
+label span {
+  /* Define a fonte em negrito */
+  font-weight: bold;
+
+  /* Adiciona um espaço inferior de 0.5em para separar o texto do campo de entrada */
+  margin-bottom: 0.5em;
+
+  /* Define a cor do texto como cinza claro (#aaa) */
+  color: #aaa;
+
+  /* Define o tamanho da fonte como 0.7em */
+  font-size: 0.7em;
+}
+
+/* Estilização para campos de entrada <input> em formulários */
+input {
+  /* Define a cor de fundo como cinza escuro (#3b3b3b) */
+  background-color: #3b3b3b;
+
+  /* Define a cor do texto como cinza claro (#aaa) */
+  color: #aaa;
+
+  /* Adiciona uma borda de 1px sólida cinza (#555) */
+  border: 1px solid #555;
+
+  /* Adiciona bordas arredondadas com um raio de 2px */
+  border-radius: 2px;
+
+  /* Adiciona preenchimento interno de 10px na vertical e 8px na horizontal */
+  padding: 10px 8px;
+
+  /* Remove a aparência de foco (contorno) ao clicar no campo */
+  outline: none;
+
+  /* Adiciona espaço inferior de 0.6em para separar os campos de entrada */
+  margin-bottom: 0.6em;
+}
+
+/* Estilização para o texto de espaço reservado (placeholder) de campos de entrada */
+input::placeholder {
+  /* Define a cor do texto de espaço reservado como cinza claro (#aaa) */
+  color: #aaa;
+}
+
+/* Estilização para botões e elementos de envio em formulários */
+.btn,
+button,
+input[type="submit"] {
+  /* Define a cor de fundo como azul (#0094f6) */
+  background-color: #0094f6;
+
+  /* Define a cor do texto como branco (#fff) */
+  color: #fff;
+
+  /* Remove a borda padrão */
+  border: none;
+
+  /* Adiciona bordas arredondadas com um raio de 4px */
+  border-radius: 4px;
+
+  /* Adiciona preenchimento interno de 10px na vertical e 8px na horizontal */
+  padding: 10px 8px;
+
+  /* Define a fonte em negrito */
+  font-weight: bold;
+
+  /* Define o cursor do mouse como uma mão (indicando que é clicável) */
+  cursor: pointer;
+
+  /* Define a opacidade inicial como 0.8 */
+  opacity: 0.8;
+
+  /* Define o tamanho da fonte como 1em (tamanho padrão) */
+  font-size: 1em;
+}
+
+/* Estilização específica para o botão de envio em formulários */
+input[type="submit"] {
+  /* Adiciona margem superior de 1em para separar o botão de outros elementos */
+  margin-top: 1em;
+}
+
+/* Estilização para campos de entrada desabilitados */
+input:disabled {
+  /* Define o cursor como "não permitido" e a cor de fundo como preto (#000) */
+  cursor: not-allowed;
+  background-color: #000;
+}
+
+/* Estilização para botões e elementos de envio quando o mouse está sobre eles */
+button:hover,
+input[type="submit"]:hover {
+  /* Aumenta a opacidade para 1 (totalmente visível) ao passar o mouse sobre o elemento */
+  opacity: 1;
+}
+
+/* Estilização específica para o botão de cancelamento com classe 'cancel-btn' */
+.cancel-btn {
+  /* Define a cor de fundo como cinza (#ccc) */
+  background-color: #ccc;
+}
+
+/* Estilização para elementos com a classe 'hide' (ocultos) */
+.hide {
+  /* Define o estilo de exibição como 'none' para ocultar os elementos */
+  display: none;
+}

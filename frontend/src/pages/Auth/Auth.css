@@ -1,0 +1,73 @@
+/* Estilização para os elementos com id 'login' e 'register' */
+#login,
+#register {
+  /* Adiciona uma borda de 1px sólida com cor cinza (#363636) */
+  border: 1px solid #363636;
+
+  /* Define a cor de fundo como preto (#000) */
+  background-color: #000;
+
+  /* Adiciona preenchimento interno de 1.5em na vertical e 2em na horizontal */
+  padding: 1.5em 2em;
+
+  /* Define a largura máxima como 33% do espaço disponível */
+  max-width: 33%;
+
+  /* Centraliza horizontalmente os elementos com margem de 2em na parte superior e inferior */
+  margin: 2em auto;
+}
+
+/* Estilização para os títulos <h2> dentro dos elementos com id 'login' e 'register' */
+#login h2,
+#register h2 {
+  /* Centraliza o texto horizontalmente */
+  text-align: center;
+
+  /* Define o tamanho da fonte como 2.1em */
+  font-size: 2.1em;
+
+  /* Remove a margem superior padrão para evitar espaçamento indesejado */
+  margin-top: 0;
+}
+
+/* Estilização para elementos com a classe 'subtitle' */
+.subtitle {
+  /* Define a fonte em negrito */
+  font-weight: bold;
+
+  /* Define a cor do texto como cinza (#999) */
+  color: #999;
+
+  /* Adiciona uma margem inferior de 1.5em para separar o subtítulo de outros elementos */
+  margin-bottom: 1.5em;
+}
+
+/* Estilização para formulários dentro dos elementos com id 'login' e 'register' */
+#login form,
+#register form {
+  /* Adiciona espaço vazio na parte inferior do formulário */
+  padding-bottom: 1.5em;
+
+  /* Adiciona uma margem vazia na parte inferior do formulário para separá-lo dos outros elementos */
+  margin-bottom: 1.5em;
+
+  /* Adiciona uma borda inferior de 1px sólida com cor cinza (#363636) */
+  border-bottom: 1px solid #363636;
+}
+
+/* Estilização para parágrafos <p> dentro dos elementos com id 'login' e 'register' */
+#login p,
+#register p {
+  /* Centraliza o texto horizontalmente */
+  text-align: center;
+}
+
+/* Estilização para hiperlinks <a> dentro de parágrafos <p> dentro dos elementos com id 'login' e 'register' */
+#login p a,
+#register p a {
+  /* Define a fonte em negrito */
+  font-weight: bold;
+
+  /* Define a cor do texto como azul (#0094f6) */
+  color: #0094f6;
+}
