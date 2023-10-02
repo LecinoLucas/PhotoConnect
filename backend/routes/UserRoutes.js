@@ -20,10 +20,10 @@ const validate = require("../middlewares/handleValidation");
 const { userCreateValidation, loginValidation,userUpdateValidation } = require("../middlewares/userValidation");
 const authGuard = require("../middlewares/authGuard");
 const { imageUpload } = require("../middlewares/imageUpload");
-
+//testando api 
 //ROUTES
 router.post("/register", userCreateValidation(), validate, register);
-router.get("/profiles", authGuard, getCurrentUser);
+router.get("/profile", authGuard, getCurrentUser);
 router.post("/login", loginValidation(), validate, login);
 router.put(
       "/",
