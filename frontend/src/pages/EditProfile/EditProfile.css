@@ -5,6 +5,7 @@
   max-width: 40%;                 /* Largura máxima do elemento */
   margin: 2em auto;               /* Margem superior e inferior (auto para centralizar horizontalmente) */
   text-align: center;             /* Alinhamento de texto ao centro */
+  color: #ccc;
 }
 
 .subtitle {

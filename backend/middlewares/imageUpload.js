@@ -1,10 +1,7 @@
-/*esse código lida com o upload de imagens 
-usando a biblioteca multer em uma aplicação Node.js.*/
-
-const multer = require("multer"); //bliblioteca para lidar com imagens
+const multer = require("multer"); // Biblioteca para lidar com imagens
 const path = require("path");
 
-// Destination to store image
+// Configuração de armazenamento de imagens
 const imageStorage = multer.diskStorage({
   destination: function (req, file, cb) {
     let folder = "";
@@ -14,21 +11,24 @@ const imageStorage = multer.diskStorage({
     } else if (req.baseUrl.includes("photos")) {
       folder = "photos";
     }
-    cb(null, `uploads/${folder}/`); //aqui configura o destino da imagem
+    cb(null, `uploads/${folder}/`); // Configura o destino da imagem
   },
   filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname)); //aqui config o nome da foto, para nao misturar
+    cb(null, Date.now() + path.extname(file.originalname)); // Configura o nome da foto para evitar conflitos
   },
 });
 
-const imageUpload = multer({ //validação da imagem
+// Middleware para upload de imagem com validação de tipo de arquivo
+const imageUpload = multer({
   storage: imageStorage,
   fileFilter(req, file, cb) {
     if (!file.originalname.match(/\.(png|jpg)$/)) {
-      // upload only png and jpg format
-      return cb(new Error("Por favor, envie apenas png ou jpg!"));
+      // Aceita apenas formatos PNG e JPG
+      const error = new Error("Por favor, envie apenas imagens PNG ou JPG!");
+      error.code = "FILE_TYPE_ERROR"; // Código personalizado para identificar o tipo de erro
+      return cb(error, false);
     }
-    cb(undefined, true);
+    cb(null, true);
   },
 });
 
