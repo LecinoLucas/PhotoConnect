@@ -36,9 +36,12 @@ const Register = () => {
   }, [dispatch]);
 
   return (
+    //<div> </div>
+    <div >
+      <div>  <h1 id="titulo">PhotoConnect</h1></div>
     <div id="register">
-      <h2>PhotoConnect</h2>
-      <p className="subtitle"> Cadastre para ver fotos de seus amigos.</p>
+      <h1 id="titulo" >Vamos lá!</h1>
+      <p className="subtitle"> Começe preenchendo o formulário abaixo!</p>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -71,6 +74,7 @@ const Register = () => {
       <p>
         Já tem uma conta? <Link to="/login">Clique aqui.</Link>
       </p>
+      </div>
     </div>
   );
 };

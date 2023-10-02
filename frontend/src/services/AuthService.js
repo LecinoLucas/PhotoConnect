@@ -13,7 +13,7 @@ const register = async (data) => {
       .catch((err) => err); // Lida com erros de rede
 
     // Se a resposta for bem-sucedida, armazena as informações do usuário no localStorage
-    if (res) {
+    if (res._id) {
       localStorage.setItem("user", JSON.stringify(res));
     }
 
@@ -41,7 +41,7 @@ const login = async (data) => {
       .catch((err) => err); // Lida com erros de rede
 
     // Se a resposta for bem-sucedida, armazena as informações do usuário no localStorage
-    if (res) {
+    if (res._id) {
       localStorage.setItem("user", JSON.stringify(res));
     }
 
@@ -55,7 +55,7 @@ const login = async (data) => {
 const authService = {
   register, // Função de registro de usuário
   logout,   // Função de logout
- // login,    // Função de login de usuário
+  login,    // Função de login de usuário
 };
 
 export default authService; // Exporta o objeto authService como padrão

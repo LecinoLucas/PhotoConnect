@@ -1,0 +1,80 @@
+#profile {
+    width: 50%;
+    margin: 0 auto;
+  }
+  
+  /* Define a largura do elemento com id 'profile' como 50% e o centraliza horizontalmente */
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1em;
+    border-bottom: 1px solid #363636;
+  }
+  
+  /* Estiliza o cabeçalho do perfil. Usa flexbox para alinhar elementos horizontalmente, permitindo quebrar em várias linhas quando necessário. Adiciona preenchimento interno e uma borda inferior. */
+  
+  .profile-header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 2em;
+  }
+  
+  /* Estiliza a imagem do perfil dentro do cabeçalho do perfil. Define a largura e altura como 100px, criando uma imagem redonda com bordas arredondadas. Adiciona margem à direita para espaçamento. */
+  
+  .new-photo {
+    padding: 1em;
+    border-bottom: 1px solid #363636;
+  }
+  
+  /* Estiliza a seção de novas fotos. Adiciona preenchimento interno e uma borda inferior. */
+  
+  .photos-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* Cria um container para as fotos, usando flexbox para permitir que elas se ajustem automaticamente em várias linhas. */
+  
+  .photo {
+    width: 32%;
+    margin: 0.3%;
+  }
+  
+  /* Estiliza uma foto individual. Define a largura como 32% para permitir três fotos por linha e adiciona uma pequena margem. */
+  
+  .photo img {
+    width: 100%;
+  }
+  
+  /* Define a largura das imagens das fotos como 100% para preencher o espaço disponível. */
+  
+  .actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+  }
+  
+  /* Estiliza a seção de ações, como botões. Usa flexbox para alinhar os elementos horizontalmente e distribui o espaço entre eles. Adiciona preenchimento interno. */
+  
+  .actions svg {
+    cursor: pointer;
+  }
+  
+  /* Estiliza os ícones dentro das ações, definindo o cursor como "pointer" para indicar que são interativos. */
+  
+  .edit-photo {
+    margin-bottom: 1em;
+  }
+  
+  /* Estiliza a seção de edição de fotos, adicionando uma margem inferior. */
+  
+  .edit-photo img {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+  
+  /* Estiliza as imagens de edição de fotos, definindo a largura como 100% e adicionando uma margem inferior. */
+  

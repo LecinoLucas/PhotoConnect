@@ -1,8 +1,13 @@
 #footer {
-    background-color: #121212;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top: 1px solid #363636; /*aquela borda para separar*/
-  }
+  background: linear-gradient(to bottom, #0e0d13, #1d1021);
+  height: 100px; /* Altere a altura para o valor desejado */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #faf6f6;
+  color: #fff;
+  margin-top: 0; /* Remova qualquer margem superior */
+  margin-bottom: 0; /* Remova qualquer margem inferior */
+  padding-top: 0; /* Remova qualquer preenchimento superior */
+  padding-bottom: 0; /* Remova qualquer preenchimento inferior */
+}

@@ -1,20 +1,36 @@
+/* Estilização para o corpo (body) da página */
+body {
+  /* Adiciona um fundo com gradiente suave de azul claro (#6DC0E4) para azul mais escuro (#3984A3) */
+  background: linear-gradient(to bottom, #4B39EF, #EE8B60);
+
+  /* Define a fonte padrão para toda a página */
+  font-family: Arial, sans-serif;
+
+  /* Define a cor do texto como laranja escuro (#FF6600) */
+  color: #030303;
+}
+
 /* Estilização para os elementos com id 'login' e 'register' */
 #login,
 #register {
-  /* Adiciona uma borda de 1px sólida com cor cinza (#363636) */
-  border: 1px solid #363636;
-
-  /* Define a cor de fundo como preto (#000) */
-  background-color: #000;
+  /* Adiciona uma borda de 2px sólida com cor azul (#3984A3) */
+  border: 2px solid #070808;
 
   /* Adiciona preenchimento interno de 1.5em na vertical e 2em na horizontal */
   padding: 1.5em 2em;
 
   /* Define a largura máxima como 33% do espaço disponível */
-  max-width: 33%;
+  max-width: 30%;
 
   /* Centraliza horizontalmente os elementos com margem de 2em na parte superior e inferior */
   margin: 2em auto;
+}
+
+#titulo {
+  /* Centraliza o texto horizontalmente */
+  text-align: center;
+  /* Define a cor do texto como azul escuro (#3984A3) */
+  color: #171c1c;
 }
 
 /* Estilização para os títulos <h2> dentro dos elementos com id 'login' e 'register' */
@@ -26,6 +42,9 @@
   /* Define o tamanho da fonte como 2.1em */
   font-size: 2.1em;
 
+  /* Define a cor do texto como laranja escuro (#FF6600) */
+  color: #080807;
+
   /* Remove a margem superior padrão para evitar espaçamento indesejado */
   margin-top: 0;
 }
@@ -35,8 +54,8 @@
   /* Define a fonte em negrito */
   font-weight: bold;
 
-  /* Define a cor do texto como cinza (#999) */
-  color: #999;
+  /* Define a cor do texto como laranja escuro (#FF6600) */
+  color: #0d0c0c;
 
   /* Adiciona uma margem inferior de 1.5em para separar o subtítulo de outros elementos */
   margin-bottom: 1.5em;
@@ -51,8 +70,8 @@
   /* Adiciona uma margem vazia na parte inferior do formulário para separá-lo dos outros elementos */
   margin-bottom: 1.5em;
 
-  /* Adiciona uma borda inferior de 1px sólida com cor cinza (#363636) */
-  border-bottom: 1px solid #363636;
+  /* Adiciona uma borda inferior de 2px sólida com cor azul (#3984A3) */
+  border-bottom: 2px solid #040505;
 }
 
 /* Estilização para parágrafos <p> dentro dos elementos com id 'login' e 'register' */
@@ -68,6 +87,6 @@
   /* Define a fonte em negrito */
   font-weight: bold;
 
-  /* Define a cor do texto como azul (#0094f6) */
-  color: #0094f6;
+  /* Define a cor do texto como laranja escuro (#FF6600) */
+  color: #2a0997;
 }

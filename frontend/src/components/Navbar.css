@@ -10,13 +10,16 @@
     justify-content: space-between;
   
     /* Define a cor de fundo do elemento 'nav' como preto (#000) */
-    background-color: #000;
+    background: linear-gradient(to bottom, #0e0d13, #1d1021);
+   /* background: linear-gradient(to bottom, #89c3ea, #186282);*/
   
     /* Adiciona uma borda inferior de 1 pixel com a cor cinza (#363636) */
-    border-bottom: 1px solid #363636;
+    border-bottom: 1px solid #d51313;
   
     /* Adiciona preenchimento (espaço dentro do elemento) de 0.1em na vertical e 1em na horizontal */
     padding: 0.1em 1em;
+
+    color: aliceblue;
   }
   /* Define um seletor para o elemento com id 'search-form' */
 #search-form {
