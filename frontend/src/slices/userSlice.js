@@ -1,28 +1,121 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import userService from "../services/userService";
 
-// Define o estado inicial do slice
 const initialState = {
-  user: {},         // Armazena informações do usuário
-  error: false,     // Indica se ocorreu um erro
-  success: false,   // Indica se a ação foi bem-sucedida
-  loading: false,   // Indica se uma operação está em andamento
-  message: null,    // Armazena mensagens associadas à ação
+  user: {},
+  error: false,
+  success: false,
+  loading: false,
+  message: null,
 };
 
-// Criação do reducer usando createSlice
+// Get user details, for edit data
+export const profile = createAsyncThunk(
+  "user/profile",
+  async (user, thunkAPI) => {
+    const token = thunkAPI.getState().auth.user.token;
+
+    const data = await userService.profile(user, token);
+
+    console.log(data);
+
+    return data;
+  }
+);
+
+// Update user details
+export const updateProfile = createAsyncThunk(
+  "user/update",
+  async (user, thunkAPI) => {
+    const token = thunkAPI.getState().auth.user.token;
+
+    const data = await userService.updateProfile(user, token);
+
+    // Check for errors
+    if (data.errors) {
+      return thunkAPI.rejectWithValue(data.errors[0]);
+    }
+
+    console.log(data);
+
+    return data;
+  }
+);
+
+export const getUserDetails = createAsyncThunk(
+    "user/get",
+    async (id, thunkAPI) => {
+      const token = thunkAPI.getState().auth.user.token;
+  
+      try {
+        const data = await userService.getUserDetails(id, token);
+  
+        // Verificar se a resposta da API contém um erro
+        if (data.errors && data.errors.length > 0) {
+          // Aqui, você pode definir a mensagem de erro no estado
+          return thunkAPI.rejectWithValue(data.errors[0]);
+        }
+  
+        console.log(data);
+  
+        return data;
+      } catch (error) {
+        // Lidar com erros de rede ou outros erros inesperados
+        console.error(error);
+        throw error;
+      }
+    }
+  );
+  
+
 export const userSlice = createSlice({
-  name: "user",     // Nome do slice
-  initialState,     // Estado inicial
+  name: "user",
+  initialState,
   reducers: {
     resetMessage: (state) => {
-      // Um reducer que redefine a mensagem para null
       state.message = null;
     },
   },
+  extraReducers: (builder) => {
+    builder
+      .addCase(profile.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(profile.fulfilled, (state, action) => {
+        state.loading = false;
+        state.success = true;
+        state.error = null;
+        state.user = action.payload;
+      })
+      .addCase(updateProfile.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(updateProfile.fulfilled, (state, action) => {
+        state.loading = false;
+        state.success = true;
+        state.error = null;
+        state.user = action.payload;
+        state.message = "Usuário atualizado com sucesso!";
+      })
+      .addCase(updateProfile.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+        state.user = null;
+      })
+      .addCase(getUserDetails.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getUserDetails.fulfilled, (state, action) => {
+        state.loading = false;
+        state.success = true;
+        state.error = null;
+        state.user = action.payload;
+      });
+  },
 });
 
-// Exporta as ações geradas pelo slice
 export const { resetMessage } = userSlice.actions;
-
-// Exporta o reducer gerado pelo slice
 export default userSlice.reducer;
