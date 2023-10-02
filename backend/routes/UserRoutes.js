@@ -23,7 +23,7 @@ const { imageUpload } = require("../middlewares/imageUpload");
 
 //ROUTES
 router.post("/register", userCreateValidation(), validate, register);
-router.get("/profile", authGuard, getCurrentUser);
+router.get("/profiles", authGuard, getCurrentUser);
 router.post("/login", loginValidation(), validate, login);
 router.put(
       "/",
