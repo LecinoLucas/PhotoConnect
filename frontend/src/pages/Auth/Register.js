@@ -36,10 +36,11 @@ const Register = () => {
   }, [dispatch]);
 
   return (
-    //<div> </div>
-    <div >
-      <div>  <h1 id="titulo">PhotoConnect</h1></div>
-    <div id="register">
+    <div> 
+      <div>
+      <h1 id="titulo">PhotoConnect</h1>
+  <div>
+    <div id="register" >
       <h1 id="titulo" >Vamos lá!</h1>
       <p className="subtitle"> Começe preenchendo o formulário abaixo!</p>
       <form onSubmit={handleSubmit}>
@@ -75,6 +76,9 @@ const Register = () => {
         Já tem uma conta? <Link to="/login">Clique aqui.</Link>
       </p>
       </div>
+    </div>
+    </div>
+    
     </div>
   );
 };

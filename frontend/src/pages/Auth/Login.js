@@ -40,6 +40,7 @@ const Login = () => {
 
   return (
     <div id="login">
+      <div>
       <h2> PhotoConnect</h2>
       <p className="subtitle"> Faça login para ver o que há de novo.</p>
       <form onSubmit={handleSubmit}>
@@ -63,6 +64,7 @@ const Login = () => {
         {" "}
         Não tem uma conta? <Link to="/register">Clique aqui</Link>
       </p>
+      </div>
     </div>
   );
 };

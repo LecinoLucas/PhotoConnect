@@ -3,9 +3,11 @@
   background-color: #000;         /* Cor de fundo preta */
   padding: 1.5em 2em;             /* Espaçamento interno superior/inferior e direita/esquerda */
   max-width: 40%;                 /* Largura máxima do elemento */
-  margin: 2em auto;               /* Margem superior e inferior (auto para centralizar horizontalmente) */
+  margin: 2em auto 4em;           /* Margem superior, inferior (aumentada para criar espaço) e centralização horizontal */
   text-align: center;             /* Alinhamento de texto ao centro */
   color: #ccc;
+  min-height: calc(100vh - 50px); /* Subtrai a altura do Footer */
+  width: 100%; /* Preenche toda a largura disponível */
 }
 
 .subtitle {

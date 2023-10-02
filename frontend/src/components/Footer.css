@@ -1,13 +1,17 @@
 #footer {
   background: linear-gradient(to bottom, #0e0d13, #1d1021);
-  height: 100px; /* Altere a altura para o valor desejado */
+  height: 30px; /* Altura mais fina */
   display: flex;
   justify-content: center;
   align-items: center;
   border-top: 1px solid #faf6f6;
   color: #fff;
-  margin-top: 0; /* Remova qualquer margem superior */
-  margin-bottom: 0; /* Remova qualquer margem inferior */
-  padding-top: 0; /* Remova qualquer preenchimento superior */
-  padding-bottom: 0; /* Remova qualquer preenchimento inferior */
+  margin: 0; /* Remova qualquer margem */
+  padding: 0; /* Remova qualquer preenchimento */
+
+  position: fixed; /* Fixa o Footer na parte inferior da janela de visualização */
+  bottom: 0; /* Alinha o Footer na parte inferior */
+  width: 100%; /* Preenche toda a largura da janela de visualização */
+  padding: 5px; /* Espaçamento interno mais fino */
+  border-top: 1px solid #363636; /* Borda superior do Footer */
 }

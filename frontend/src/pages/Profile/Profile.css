@@ -1,6 +1,14 @@
 #profile {
     width: 50%;
     margin: 0 auto;
+  
+  
+  width: 100%; /* Preenche toda a largura disponível */
+  margin: 0 auto;
+  max-width: 40%;
+  margin: 2em auto;
+  padding: 1.5em 2em;
+  min-height: calc(100vh - 50px); /* Subtrai a altura do Footer */
   }
   
   .profile-header {
@@ -9,6 +17,7 @@
     flex-wrap: wrap;
     padding: 1em;
     border-bottom: 1px solid #363636;
+    
   }
   
   .profile-header img {
@@ -16,6 +25,7 @@
     height: 100px;
     border-radius: 50%;
     margin-right: 2em;
+    
   }
   
   .new-photo {

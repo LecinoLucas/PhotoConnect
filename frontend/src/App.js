@@ -25,10 +25,12 @@ function App() {
   }
 
   return (
+    
     <div className="App">
+      
       <BrowserRouter>
         <Navbar />
-
+        <div>
         <div className="container">
           <Routes>
             <Route
@@ -53,7 +55,7 @@ function App() {
             />
           </Routes>
         </div>
-
+        </div>
         <Footer />
       </BrowserRouter>
     </div>

@@ -1,44 +1,90 @@
+
 #nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #000;
-  border-bottom: 1px solid #363636;
-  padding: 0.1em 1em;
-}
+    /* Define o elemento 'nav' como um container flexível */
+    display: flex;
+  
+    /* Alinha os itens (conteúdo dentro do container) ao centro verticalmente */
+    align-items: center;
+  
+    /* Cria espaço entre os itens para ocupar todo o espaço horizontal */
+    justify-content: space-between;
+  
+    /* Define a cor de fundo do elemento 'nav' como preto (#000) */
+    background: linear-gradient(to bottom, #0e0d13, #1d1021);
+   /* background: linear-gradient(to bottom, #89c3ea, #186282);*/
+  
+    /* Adiciona uma borda inferior de 1 pixel com a cor cinza (#363636) */
+    border-bottom: 1px solid #d51313;
+  
+    /* Adiciona preenchimento (espaço dentro do elemento) de 0.1em na vertical e 1em na horizontal */
+    padding: 0.1em 1em;
 
+    color: aliceblue;
+  }
+  /* Define um seletor para o elemento com id 'search-form' */
 #search-form {
-  position: relative;
-  width: 20%;
-}
+    /* Define a posição do elemento como relativa em relação ao seu contexto */
+    position: relative;
+  
+    /* Define a largura do elemento como 20% do espaço disponível do seu pai */
+    width: 20%;
+  }
+  
+  /* Seleciona elementos 'svg' que estão dentro do elemento com id 'search-form' */
+  #search-form svg {
+    /* Define a posição do elemento 'svg' como absoluta em relação ao pai 'search-form' */
+    position: absolute;
+  
+    /* Define a distância do topo do elemento 'svg' em relação ao topo do pai 'search-form' como 10 pixels */
+    top: 10px;
+  
+    /* Define a distância da esquerda do elemento 'svg' em relação à esquerda do pai 'search-form' como 9 pixels */
+    left: 9px;
+  }
 
-#search-form svg {
-  position: absolute;
-  top: 10px;
-  left: 9px;
-}
-
+  /* Seleciona elementos <input> que estão dentro do elemento com id 'search-form' */
 #search-form input {
-  padding-left: 2.5em;
-  border: none;
-  border-radius: 5px;
-  width: 100%;
-  margin: 0;
-}
+    /* Adiciona preenchimento (espaço dentro do elemento) à esquerda de 2.5em */
+    padding-left: 2.5em;
+  
+    /* Remove a borda do elemento */
+    border: none;
+  
+    /* Define um raio de borda de 5 pixels, arredondando as bordas do elemento */
+    border-radius: 5px;
+  
+    /* Define a largura do elemento como 100% da largura disponível do pai 'search-form' */
+    width: 100%;
+  
+    /* Remove margens padrão para evitar espaços indesejados ao redor do elemento */
+    margin: 0;
+  }
 
+  /* Seleciona o elemento com id 'nav-links' */
 #nav-links {
-  display: flex;
-  align-items: center;
-}
-
-#nav-links li {
-  margin-right: 1em;
-}
-
-#nav-links span {
-  cursor: pointer;
-}
-
-#nav-links svg {
-  font-size: 1.5em;
-}
+    /* Define o elemento 'nav-links' como um container flexível */
+    display: flex;
+  
+    /* Alinha os itens (conteúdo dentro do container) verticalmente ao centro */
+    align-items: center;
+  }
+  
+  /* Seleciona elementos <li> dentro do elemento com id 'nav-links' */
+  #nav-links li {
+    /* Adiciona uma margem à direita dos elementos <li> para criar espaço entre eles */
+    margin-right: 1em;
+  }
+  
+  /* Seleciona elementos <span> dentro do elemento com id 'nav-links' */
+  #nav-links span {
+    /* Define um cursor personalizado (formato do ponteiro do mouse) */
+    cursor: pointer;
+  }
+  
+  /* Seleciona elementos <svg> dentro do elemento com id 'nav-links' */
+  #nav-links svg {
+    /* Define o tamanho da fonte dos elementos <svg> como 1.5 vezes o tamanho padrão */
+    font-size: 1.5em;
+  }
+  
+  

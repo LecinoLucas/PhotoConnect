@@ -1,25 +1,22 @@
-/* Estilos para a classe .message */
 .message {
-    border-radius: 5px;           /* Borda arredondada */
-    padding: 5px 10px;            /* Preenchimento interno */
-    position: relative;           /* Posição relativa para posicionamento */
-    margin: 0;                    /* Margem zero */
-    display: flex;                /* Exibir como flex para alinhamento */
-    justify-content: center;      /* Centraliza horizontalmente */
-    align-items: center;          /* Centraliza verticalmente */
-  }
-  
-  /* Estilos para a classe .error (mensagem de erro) */
-  .error {
-    color: #721c24;               /* Cor do texto para erro */
-    background-color: #f8d7da;   /* Cor de fundo para erro */
-    border-color: #f5c6cb;       /* Cor da borda para erro */
-  }
-  
-  /* Estilos para a classe .success (mensagem de sucesso) */
-  .success {
-    color: #155724;              /* Cor do texto para sucesso */
-    background-color: #d4edda;   /* Cor de fundo para sucesso */
-    border-color: #c3e6cb;       /* Cor da borda para sucesso */
-  }
-  
+  border-radius: 5px;
+  padding: 5px 10px;
+  position: relative;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
