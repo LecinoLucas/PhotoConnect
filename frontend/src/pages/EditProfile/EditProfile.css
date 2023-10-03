@@ -2,7 +2,7 @@
   border: 1px solid #363636;      /* Borda com cor e espessura */
   background-color: #000;         /* Cor de fundo preta */
   padding: 1.5em 2em;             /* Espaçamento interno superior/inferior e direita/esquerda */
-  max-width: 40%;                 /* Largura máxima do elemento */
+  max-width: 30%;                 /* Largura máxima do elemento */
   margin: 2em auto 4em;           /* Margem superior, inferior (aumentada para criar espaço) e centralização horizontal */
   text-align: center;             /* Alinhamento de texto ao centro */
   color: #ccc;
