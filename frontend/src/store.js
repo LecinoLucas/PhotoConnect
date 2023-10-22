@@ -4,7 +4,7 @@ import { configureStore } from "@reduxjs/toolkit";
  //Importa os reducers (redutores) de cada slice (parte) do estado
 import authReducer from "./slices/AuthSlices";
 import userReducer from "./slices/userSlice";
-//import photoReducer from "./slices/photoSlice";
+import photoReducer from "./slices/photoSlices";
 
 // Cria a loja (store) do Redux configurada com os reducers
 export const store = configureStore({
@@ -12,6 +12,6 @@ export const store = configureStore({
   reducer: {
     auth: authReducer,     // Reducer para o estado de autenticação
     user: userReducer,     // Reducer para o estado do usuário
-    //photo: photoReducer,   // Reducer para o estado de fotos*/
+    photo: photoReducer,   // Reducer para o estado de fotos*/
   },
 });
