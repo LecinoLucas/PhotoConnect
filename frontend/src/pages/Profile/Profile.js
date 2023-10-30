@@ -203,11 +203,11 @@ const Profile = () => {
           {messagePhoto && <Message msg={messagePhoto} type="success" />}
         </>
       )}
-      <div className="user-photos">
+         <div className="user-photos">
         <h2>Fotos publicadas:</h2>
         <div className="photos-container">
-          {photos &&
-            photos.map((photo) => (
+        {Array.isArray(photos) ? (
+      photos.map((photo) => (
               <div className="photo" key={photo._id}>
                 {photo.image && (
                   <img
@@ -229,8 +229,11 @@ const Profile = () => {
                   </Link>
                 )}
               </div>
-            ))}
-              {photos.length === 0 && <p>Ainda não há fotos publicadas...</p>}
+            ))
+        ):(
+          <p>Ainda não há fotos publicadas...</p>
+              //{photos.length === 0 && <p>Ainda não há fotos publicadas...</p>}  
+        )}
         </div>
       </div>
     </div>

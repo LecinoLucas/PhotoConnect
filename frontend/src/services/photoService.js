@@ -17,18 +17,19 @@ const publishPhoto = async (data, token) => {
 
 // Get user photos
 const getUserPhotos = async (id, token) => {
-    const config = requestConfig("GET", null, token);
+  const config = requestConfig("GET", null, token)
   
-    try {
+  try {
       const res = await fetch(api + "/photos/user/" + id, config)
-        .then((res) => res.json())
-        .catch((err) => err);
-  
-      return res;
-    } catch (error) {
-      console.log(error);
-    }
-  };
+          .then((res) => res.json())
+          .catch((err) => err)
+
+          return res
+  } catch (error) {
+      console.log(error)
+  }
+
+}
 
   // Delete a photo
 const deletePhoto = async (id, token) => {
@@ -59,11 +60,46 @@ const updatePhoto = async (data, id, token) => {
     console.log(error);
   }
 };
+
+// Get photo by id
+/*const getPhoto = async (id, token) => {
+  const config = requestConfig("GET", null, token);
+
+  try {
+    const response = await fetch(api + "/photos/" + id, config);
+
+    if (!response.ok) {
+      throw new Error(`Erro ao buscar a foto. Status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Erro na solicitação getPhoto:", error);
+    throw error;
+  }
+};*/
+
+
+const getPhoto = async (id, token) => {
+  const config = requestConfig("GET", null, token);
+
+  try {
+    const res = await fetch(api + "/photos/" + id, config)
+      .then((res) => res.json())
+      .catch((err) => err);
+
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+};
 const photoService = {
     publishPhoto,
     getUserPhotos,
     deletePhoto,
     updatePhoto,
+    getPhoto,
 };
 
 export default photoService;
