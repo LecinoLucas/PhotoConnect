@@ -9,7 +9,7 @@
   margin: 0; /* Remova qualquer margem */
   padding: 0; /* Remova qualquer preenchimento */
 
-  position: fixed; /* Fixa o Footer na parte inferior da janela de visualização */
+  /*position: fixed;  Fixa o Footer na parte inferior da janela de visualização */
   bottom: 0; /* Alinha o Footer na parte inferior */
   width: 100%; /* Preenche toda a largura da janela de visualização */
   padding: 5px; /* Espaçamento interno mais fino */

@@ -1,67 +1,64 @@
 #profile {
-    width: 50%;
-    margin: 0 auto;
-  
-  
-  width: 100%; /* Preenche toda a largura disponível */
-  margin: 0 auto;
-  max-width: 40%;
-  margin: 2em auto;
-  padding: 1.5em 2em;
-  min-height: calc(100vh - 50px); /* Subtrai a altura do Footer */
-  }
-  
-  .profile-header {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 1em;
-    border-bottom: 1px solid #363636;
-    
-  }
-  
-  .profile-header img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-right: 2em;
-    
-  }
-  
-  .new-photo {
-    padding: 1em;
-    border-bottom: 1px solid #363636;
-  }
-  
-  .photos-container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .photo {
-    width: 32%;
-    margin: 0.3%;
-  }
-  
-  .photo img {
-    width: 100%;
-  }
-  
-  .actions {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-  }
-  
-  .actions svg {
-    cursor: pointer;
-  }
-  
-  .edit-photo {
-    margin-bottom: 1em;
-  }
-  
-  .edit-photo img {
-    width: 100%;
-    margin-bottom: 1em;
-  }
+  width: 50%; /* Define a largura do elemento #profile como 50% da largura do elemento pai */
+  margin: 0 auto; /* Centraliza o elemento horizontalmente na página */
+
+  width: 100%; /* Preenche toda a largura disponível (sobrescreve a definição anterior) */
+  margin: 0 auto; /* Centraliza o elemento horizontalmente (sobrescreve a definição anterior) */
+  max-width: 40%; /* Define a largura máxima do elemento como 40% da largura do elemento pai */
+  margin: 2em auto; /* Centraliza o elemento com uma margem superior de 2em e inferior de 2em */
+  padding: 1.5em 2em; /* Adiciona preenchimento interno de 1.5em superior/inferior e 2em à esquerda/direita */
+  min-height: calc(100vh - 50px); /* Define a altura mínima do elemento como 100% da altura da viewport menos 50px (altura do footer) */
+}
+
+.profile-header {
+  display: flex; /* Define o display flex para o elemento .profile-header e seus filhos */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  flex-wrap: wrap; /* Permite que os elementos dentro de .profile-header quebrem para a próxima linha quando não couberem horizontalmente */
+  padding: 1em; /* Adiciona preenchimento interno de 1em em todas as direções */
+  border-bottom: 1px solid #363636; /* Adiciona uma borda inferior sólida com cor #363636 */
+}
+
+.profile-header img {
+  width: 100px; /* Define a largura da imagem como 100px */
+  height: 100px; /* Define a altura da imagem como 100px */
+  border-radius: 50%; /* Cria um efeito de borda arredondada para a imagem */
+  margin-right: 2em; /* Adiciona uma margem direita de 2em à imagem */
+}
+
+.new-photo {
+  padding: 1em; /* Adiciona preenchimento interno de 1em em todas as direções */
+  border-bottom: 1px solid #363636; /* Adiciona uma borda inferior sólida com cor #363636 */
+}
+
+.photos-container {
+  display: flex; /* Define o display flex para o elemento .photos-container e seus filhos */
+  flex-wrap: wrap; /* Permite que os elementos dentro de .photos-container quebrem para a próxima linha quando não couberem horizontalmente */
+}
+
+.photo {
+  width: 42%; /* Define a largura de .photo como 32% da largura do elemento pai */
+  margin: 0.8%; /* Adiciona uma margem de 0.3% em todas as direções entre os elementos .photo */
+}
+
+.photo img {
+  width: 100%; /* Define a largura da imagem dentro de .photo como 100% */
+}
+
+.actions {
+  display: flex; /* Define o display flex para o elemento .actions e seus filhos */
+  justify-content: space-around; /* Distribui o espaço entre os filhos igualmente, centralizando-os horizontalmente */
+  padding: 10px; /* Adiciona um preenchimento interno de 10px em todas as direções */
+}
+
+.actions svg {
+  cursor: pointer; /* Define um cursor de apontador (geralmente uma mão) para os elementos SVG dentro de .actions */
+}
+
+.edit-photo {
+  margin-bottom: 1em; /* Adiciona uma margem inferior de 1em ao elemento .edit-photo */
+}
+
+.edit-photo img {
+  width: 100%; /* Define a largura da imagem dentro de .edit-photo como 100% */
+  margin-bottom: 1em; /* Adiciona uma margem inferior de 1em à imagem */
+}
