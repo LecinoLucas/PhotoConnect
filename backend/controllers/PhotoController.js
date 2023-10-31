@@ -69,15 +69,15 @@ const deletePhoto = async (req, res) => {
       return;
  }
 };
-
-// Get all photos
 const getAllPhotos = async (req, res) => {
-    const photos = await Photo.find({})
-      .sort([["createdAt", -1]])  // sort by QUE ORDENA PELOS CRIADOS PARA OS MAIS NOVOS
-      .exec(); //EXECUTAR ESSA "QUERY"
-  
-    return res.status(200).json(photos);
-  };
+  const photos = await Photo.find({})
+    .select("image title userName") // Selecionar os campos que você deseja recuperar
+    .sort([["createdAt", -1]])
+    .exec();
+
+  return res.status(200).json(photos);
+};
+
 
   // Get user photos
 const getUserPhotos = async (req, res) => {

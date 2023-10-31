@@ -10,7 +10,7 @@ const userSchema = new Schema(
     bio: String,
   },
   {
-    timestamps: true, //dois campos serao criados no meu model para data e hora
+    timestamps: true,
   }
 );
 
