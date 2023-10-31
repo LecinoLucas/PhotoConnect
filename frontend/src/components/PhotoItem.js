@@ -5,6 +5,7 @@ import { uploads } from "../utils/config";
 import { Link } from "react-router-dom";
 
 const PhotoItem = ({ photo }) => {
+  console.log(photo);
   return (
     <div className="photo-item">
       {photo.image && (
@@ -12,7 +13,7 @@ const PhotoItem = ({ photo }) => {
       )}
       <h2>{photo.title}</h2>
       <p className="photo-author">
-        Publicada por:
+        Publicada por:{" "}
         <Link to={`/users/${photo.userId}`}>{photo.userName}</Link>
       </p>
     </div>
