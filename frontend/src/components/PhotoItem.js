@@ -5,7 +5,6 @@ import { uploads } from "../utils/config";
 import { Link } from "react-router-dom";
 
 const PhotoItem = ({ photo }) => {
-  console.log(photo);
   return (
     <div className="photo-item">
       {photo.image && (
