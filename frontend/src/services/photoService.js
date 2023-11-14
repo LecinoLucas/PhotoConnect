@@ -62,7 +62,7 @@ const updatePhoto = async (data, id, token) => {
 };
 
 // Get photo by id
-/*const getPhoto = async (id, token) => {
+const getPhoto = async (id, token) => {
   const config = requestConfig("GET", null, token);
 
   try {
@@ -78,22 +78,11 @@ const updatePhoto = async (data, id, token) => {
     console.error("Erro na solicitação getPhoto:", error);
     throw error;
   }
-};*/
-
-
-const getPhoto = async (id, token) => {
-  const config = requestConfig("GET", null, token);
-
-  try {
-    const res = await fetch(api + "/photos/" + id, config)
-      .then((res) => res.json())
-      .catch((err) => err);
-
-    return res;
-  } catch (error) {
-    console.log(error);
-  }
 };
+
+
+
+
 
 // Like a photo
 const like = async (id, token) => {

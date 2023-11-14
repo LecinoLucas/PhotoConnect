@@ -18,6 +18,7 @@ import EditProfile from "./pages/EditProfile/EditProfile";
 import Profile from "./pages/Profile/Profile";
 import Photo from "./pages/Photo/Photo";
 import Search from "./pages/Search/Search";
+import Home2 from "./pages/Photo/Home2";
 
 function App() {
   const { auth, loading } = useAuth();

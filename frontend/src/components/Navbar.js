@@ -61,7 +61,7 @@ const handleSearch = (e) => {
               <NavLink to="/">
                 {" "}
                 <BsHouseDoorFill />{" "}
-              </NavLink>
+              </NavLink> 
             </li>
             {user && (
               <li>
