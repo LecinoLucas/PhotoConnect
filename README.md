@@ -19,7 +19,9 @@ Este projeto é uma aplicação de redes sociais onde os usuários podem compart
 - Node.js
 - Express
 - MongoDB
-- ...
+- JavaScript
+- HTML
+- CSS
 
 ## Como Usar
 
