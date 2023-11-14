@@ -1,7 +1,6 @@
-const multer = require("multer"); // Biblioteca para lidar com imagens
+const multer = require("multer");
 const path = require("path");
 
-// Configuração de armazenamento de imagens
 const imageStorage = multer.diskStorage({
   destination: function (req, file, cb) {
     let folder = "";
@@ -11,24 +10,29 @@ const imageStorage = multer.diskStorage({
     } else if (req.baseUrl.includes("photos")) {
       folder = "photos";
     }
-    cb(null, `uploads/${folder}/`); // Configura o destino da imagem
+    cb(null, `uploads/${folder}/`);
   },
   filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname)); // Configura o nome da foto para evitar conflitos
+    cb(null, Date.now() + path.extname(file.originalname));
   },
 });
 
-// Middleware para upload de imagem com validação de tipo de arquivo
 const imageUpload = multer({
   storage: imageStorage,
-  fileFilter(req, file, cb) {
-    if (!file.originalname.match(/\.(png|jpg)$/)) {
-      // Aceita apenas formatos PNG e JPG
-      const error = new Error("Por favor, envie apenas imagens PNG ou JPG!");
-      error.code = "FILE_TYPE_ERROR"; // Código personalizado para identificar o tipo de erro
+  fileFilter: (req, file, cb) => {
+    const filetypes = /jpeg|jpg|png/;
+    const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+    const mimetype = filetypes.test(file.mimetype);
+
+    const isPDF = file.mimetype === 'application/pdf'; // Verifica o tipo PDF
+
+    if (extname && mimetype && !isPDF) {
+      return cb(null, true);
+    } else {
+      const error = new Error("Por favor, envie apenas imagens PNG, JPG ou JPEG!");
+      error.code = "FILE_TYPE_ERROR";
       return cb(error, false);
     }
-    cb(null, true);
   },
 });
 

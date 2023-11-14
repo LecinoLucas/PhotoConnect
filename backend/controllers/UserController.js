@@ -1,8 +1,7 @@
 const User = require("../model/User");
-
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const mongoose= require("mongoose");
+const mongoose = require("mongoose");
 
 const jwtSecret = process.env.JWT_SECRET;
 
@@ -36,7 +35,7 @@ const register = async (req, res) => {
     password: passwordHash,
   });
 
-  // If user was created sucessfully, return the token
+  // If user was created successfully, return the token
   if (!newUser) {
     res.status(422).json({
       errors: ["Houve um erro, por favor tente novamente mais tarde."],
@@ -50,10 +49,9 @@ const register = async (req, res) => {
   });
 };
 
-// Get logged in user
+// Get logged-in user
 const getCurrentUser = async (req, res) => {
   const user = req.user;
-
   res.status(200).json(user);
 };
 
@@ -86,17 +84,14 @@ const login = async (req, res) => {
 // Update user
 const update = async (req, res) => {
   const { name, password, bio } = req.body;
-
   let profileImage = null;
 
   if (req.file) {
     profileImage = req.file.filename;
   }
+  
   const reqUser = req.user;
-
-  const user = await User.findById(new mongoose.Types.ObjectId(reqUser._id)).select(
-    "-password"
-  );
+  const user = await User.findById(new mongoose.Types.ObjectId(reqUser._id)).select("-password");
 
   if (name) {
     user.name = name;
@@ -116,31 +111,28 @@ const update = async (req, res) => {
     user.bio = bio;
   }
 
-  await user.save(); //salvar no banco
+  await user.save(); // Salvar no banco
 
   res.status(200).json(user);
 };
 
-// Get user by id
+// Get user by ID
 const getUserById = async (req, res) => {
   const { id } = req.params;
 
-  try { const user = await User.findById(new mongoose.Types.ObjectId(id)).select(
-    "-password"
-  );
-  if (!user) {
-    res.status(404).json({ errors: ["Usuário não encontrado!"] });
-    return;
-  }
-  res.status(200).json(user);
-  } catch (error) {{
+  try {
+    const user = await User.findById(new mongoose.Types.ObjectId(id)).select("-password");
+
+    if (!user) {
       res.status(404).json({ errors: ["Usuário não encontrado!"] });
       return;
     }
-  
-  }
-  // Check if user exists
 
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(500).json({ errors: ["Ocorreu um erro ao buscar o usuário."] });
+    return;
+  }
 };
 
 module.exports = {
