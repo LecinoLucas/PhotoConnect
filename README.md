@@ -29,12 +29,12 @@ Este projeto é uma aplicação de redes sociais onde os usuários podem compart
    cd server
    npm install
    
-  # Inicialização
-   npm run server
-
    # Instalar dependências do cliente
    cd client
    npm install
-
-   # Inicialização
+   
+ 2. # Inicialização Backend
+   npm run server
+   
+   # Inicialização Frontend
    npm start
