@@ -159,8 +159,7 @@ const Profile = () => {
       {id === userAuth._id && (
         <>
           <div className="new-photo" ref={newPhotoForm}>
-
-            <h3>Compartilhe algum momento seu: </h3>
+            <h3>Compartilhe algum momento seu:</h3>
             <form onSubmit={submitHandle}>
               <label>
                 <span>Título para a foto:</span>
@@ -181,7 +180,6 @@ const Profile = () => {
               )}
             </form>
           </div>
-
           <div className="edit-photo hide" ref={editPhotoForm}>
             <p>Editando:</p>
             {editImage && (
@@ -203,11 +201,11 @@ const Profile = () => {
           {messagePhoto && <Message msg={messagePhoto} type="success" />}
         </>
       )}
-         <div className="user-photos">
+      <div className="user-photos">
         <h2>Fotos publicadas:</h2>
         <div className="photos-container">
-        {Array.isArray(photos) ? (
-      photos.map((photo) => (
+          {photos &&
+            photos.map((photo) => (
               <div className="photo" key={photo._id}>
                 {photo.image && (
                   <img
@@ -217,23 +215,20 @@ const Profile = () => {
                 )}
                 {id === userAuth._id ? (
                   <div className="actions">
-                  <Link to={`/photos/${photo._id}`}>
-                    <BsFillEyeFill />
-                  </Link>
-                  <BsPencilFill onClick={() => handleEdit(photo)}/>
-                  <BsXLg onClick={() => handleDelete(photo._id)} />
-                </div>
+                    <Link to={`/photos/${photo._id}`}>
+                      <BsFillEyeFill />
+                    </Link>
+                    <BsPencilFill onClick={() => handleEdit(photo)} />
+                    <BsXLg onClick={() => handleDelete(photo._id)} />
+                  </div>
                 ) : (
-                  <Link className="btn" to={`/users/${user._id}`}>
+                  <Link className="btn" to={`/photos/${photo._id}`}>
                     Ver
                   </Link>
                 )}
               </div>
-            ))
-        ):(
-          <p>Ainda não há fotos publicadas...</p>
-              //{photos.length === 0 && <p>Ainda não há fotos publicadas...</p>}  
-        )}
+            ))}
+          {photos.length === 0 && <p>Ainda não há fotos publicadas...</p>}
         </div>
       </div>
     </div>

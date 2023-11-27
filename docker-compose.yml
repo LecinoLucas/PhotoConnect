@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  frontend:
+    depends_on:
+      - backend
+    build: ./frontend
+    ports:
+      -3000:3000
+
+  backend:
+    depends_on:
+      - db
+    build: ./backend
+    ports:
+      -5000:5000
+    environment:
+      DB_URL: mongodb+srv://${dbUser}:${dbPassword}@cluster0.yaxtfon.mongodb.net/?retryWrites=true&w=majority
+    command: ./docker-entrypoint.sh
+
+  db:
+    image: mongo: 4.0-xenial
+    ports:
+      -27017:27017
+    volumes:
+      -vidly:/data/db
+
+volumes:
+  vidly:

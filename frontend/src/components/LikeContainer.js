@@ -1,12 +1,8 @@
 import "./LikeContainer.css";
-import React from "react";
+
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 
 const LikeContainer = ({ photo, user, handleLike }) => {
-  const handleLikeClick = () => {
-    handleLike(photo._id);
-  };
-
   return (
     <div className="like">
       {photo.likes && user && (
@@ -14,7 +10,7 @@ const LikeContainer = ({ photo, user, handleLike }) => {
           {photo.likes.includes(user._id) ? (
             <BsHeartFill />
           ) : (
-            <BsHeart onClick={handleLikeClick} />
+            <BsHeart onClick={() => handleLike(photo)} />
           )}
           <p>{photo.likes.length} like(s)</p>
         </>
