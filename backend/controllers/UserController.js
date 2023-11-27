@@ -130,6 +130,7 @@ const getUserById = async (req, res) => {
 
     res.status(200).json(user);
   } catch (error) {
+    
     res.status(500).json({ errors: ["Ocorreu um erro ao buscar o usuário."] });
     return;
   }

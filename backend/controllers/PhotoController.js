@@ -69,9 +69,9 @@ const deletePhoto = async (req, res) => {
       return;
  }
 };
+// Get all photos
 const getAllPhotos = async (req, res) => {
   const photos = await Photo.find({})
-    .select("image title userName") // Selecionar os campos que você deseja recuperar
     .sort([["createdAt", -1]])
     .exec();
 
@@ -111,6 +111,11 @@ const updatePhoto = async (req, res) => {
   const { id } = req.params;
   const { title } = req.body;
 
+  let image;
+
+  if (req.file) {
+    image = req.file.filename;
+  }
 
   const reqUser = req.user;
 
@@ -132,6 +137,10 @@ const updatePhoto = async (req, res) => {
 
   if (title) {
     photo.title = title;
+  }
+  
+  if (image) {
+    photo.image = image;
   }
 
   await photo.save();
