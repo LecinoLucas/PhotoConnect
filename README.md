@@ -19,7 +19,9 @@ Este projeto é uma aplicação de redes sociais onde os usuários podem compart
 - Node.js
 - Express
 - MongoDB
-- ...
+- JavaScript
+- HTML
+- CSS
 
 ## Como Usar
 
@@ -28,7 +30,13 @@ Este projeto é uma aplicação de redes sociais onde os usuários podem compart
    # Instalar dependências do servidor
    cd server
    npm install
-
+   
    # Instalar dependências do cliente
    cd client
    npm install
+   
+ 2. # Inicialização Backend
+   npm run server
+   
+   # Inicialização Frontend
+   npm start
