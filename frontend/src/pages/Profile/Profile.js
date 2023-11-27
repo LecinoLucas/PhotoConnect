@@ -203,9 +203,11 @@ const Profile = () => {
       )}
       <div className="user-photos">
         <h2>Fotos publicadas:</h2>
+
         <div className="photos-container">
-          {photos &&
-            photos.map((photo) => (
+           
+        {Array.isArray(photos) ? (
+      photos.map((photo) => (
               <div className="photo" key={photo._id}>
                 {photo.image && (
                   <img
@@ -215,20 +217,23 @@ const Profile = () => {
                 )}
                 {id === userAuth._id ? (
                   <div className="actions">
-                    <Link to={`/photos/${photo._id}`}>
-                      <BsFillEyeFill />
-                    </Link>
-                    <BsPencilFill onClick={() => handleEdit(photo)} />
-                    <BsXLg onClick={() => handleDelete(photo._id)} />
-                  </div>
+                  <Link to={`/photos/${photo._id}`}>
+                    <BsFillEyeFill />
+                  </Link>
+                  <BsPencilFill onClick={() => handleEdit(photo)}/>
+                  <BsXLg onClick={() => handleDelete(photo._id)} />
+                </div>
                 ) : (
                   <Link className="btn" to={`/photos/${photo._id}`}>
                     Ver
                   </Link>
                 )}
               </div>
-            ))}
-          {photos.length === 0 && <p>Ainda não há fotos publicadas...</p>}
+            ))
+        ):(
+          <p>Ainda não há fotos publicadas...</p>
+              //{photos.length === 0 && <p>Ainda não há fotos publicadas...</p>}  
+        )}
         </div>
       </div>
     </div>
