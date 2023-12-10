@@ -51,7 +51,7 @@ const Login = () => {
     <div id="login">
       <div>
         <h2>PhotoConnect</h2>
-        <p className="subtitle">Faça login para ver o que há de novo.</p>
+        <p className="subtitle"> Compartilhe, Conecte e Resolva</p>
         <form onSubmit={handleSubmit}>
           <input
             type="text"

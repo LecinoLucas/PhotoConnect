@@ -8,6 +8,7 @@
   color: #ccc;
   min-height: calc(100vh - 50px); /* Subtrai a altura do Footer */
   width: 100%; /* Preenche toda a largura disponível */
+  
 }
 
 .subtitle {
@@ -19,4 +20,14 @@
   height: 150px;                  /* Altura da imagem de perfil */
   border-radius: 50%;             /* Borda circular para criar uma imagem de perfil arredondada */
   margin-bottom: 1em;             /* Margem inferior para distância entre a imagem e outros elementos */
+}
+
+.bio-input {
+  width: 100%; /* Ajuste conforme necessário */
+  height: 40px; /* Ajuste conforme necessário */
+  color: gray;
+  border: 1px solid gray;
+  padding: 8px;
+  border-radius: 4px;
+  /* Outros estilos conforme necessário */
 }

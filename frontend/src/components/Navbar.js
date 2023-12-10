@@ -59,7 +59,9 @@ const Navbar = () => {
   return (
     <nav id="nav">
       {/* Link para a página inicial */}
-      <Link to="/">PhotoConnect</Link>
+      <Link to="/">
+        <BsFillCameraFill /> PhotoConnect
+      </Link>
 
       {/* Formulário de pesquisa */}
       <form id="search-form" onSubmit={handleSearch}>

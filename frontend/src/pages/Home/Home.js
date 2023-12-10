@@ -47,6 +47,7 @@ const Home = () => {
             <Link className="btn" to={`/photos/${photo._id}`}>
               Ver mais
             </Link>
+           
           </div>
         ))
       ) : (
