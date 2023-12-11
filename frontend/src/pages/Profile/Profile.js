@@ -162,7 +162,7 @@ const Profile = () => {
             <h3>Compartilhe duvidas ou erros:</h3>
             <form onSubmit={submitHandle}>
               <label>
-                <span>Título para a foto:</span>
+                <span>Título e descrição do problema:</span>
                 <input
                   type="text"
                   placeholder="Insira um título"
