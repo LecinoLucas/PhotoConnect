@@ -20,7 +20,7 @@ const imageStorage = multer.diskStorage({
 const imageUpload = multer({
   storage: imageStorage,
   fileFilter: (req, file, cb) => {
-    const filetypes = /jpeg|jpg|png/;
+    const filetypes = /jpeg|jpg|webp|png/;
     const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
     const mimetype = filetypes.test(file.mimetype);
 
@@ -29,7 +29,7 @@ const imageUpload = multer({
     if (extname && mimetype && !isPDF) {
       return cb(null, true);
     } else {
-      const error = new Error("Por favor, envie apenas imagens PNG, JPG ou JPEG!");
+      const error = new Error("Por favor, envie apenas imagens PNG, JPG, WEBP ou JPEG!");
       error.code = "FILE_TYPE_ERROR";
       return cb(error, false);
     }
